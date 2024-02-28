@@ -43,7 +43,7 @@ micro-service:
  
 logging:
   level:
-    com.se.thanhvinh.simple: TRACE
+    com.se.movie.simple: TRACE
 
 management:
   endpoints:
