@@ -1,0 +1,56 @@
+<nz-card>
+  <nz-descriptions nzTitle="User Info" nzBordered>
+    <nz-descriptions-item nzTitle="Product"
+      >Cloud Database</nz-descriptions-item
+    >
+    <nz-descriptions-item nzTitle="Billing Mode">Prepaid</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Automatic Renewal">YES</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Order Time"
+      >2018-04-24 18:00:00</nz-descriptions-item
+    >
+    <nz-descriptions-item nzTitle="Order Time">
+      <nz-table
+        #groupingTable
+        nzBordered
+        nzSize="middle"
+        [nzData]="['']"
+        nzShowPagination="false"
+      >
+        <thead>
+          <tr>
+            <th colspan="2"></th>
+            <th *ngFor="let movie of movieGradleList$">
+              {{ movie.movieGradeName }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container
+            *ngFor="let site of siteGradleList$; let siteIndex = index"
+          >
+            <ng-container
+              *ngFor="let seat of seatGradleList$; let seatIndex = index"
+            >
+              <tr>
+                <td
+                  *ngIf="seatIndex == 0"
+                  [attr.rowspan]="seatGradleList$.length"
+                >
+                  {{ site.siteGradeName }}
+                </td>
+                <td>
+                  {{ seat.seatGradeName }}
+                </td>
+                <td
+                  *ngFor="let movie of movieGradleList$; let movieIndex = index"
+                >
+                  {{ getChargByKey(movie.id + "/" + seat.id + "/" + site.id) }}
+                </td>
+              </tr>
+            </ng-container>
+          </ng-container>
+        </tbody>
+      </nz-table>
+    </nz-descriptions-item>
+  </nz-descriptions>
+</nz-card>
