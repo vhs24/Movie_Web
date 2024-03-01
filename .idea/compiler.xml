@@ -2,14 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.7/8c0c52e08d474127866b374fbf494f73f04b7b80/spring-boot-configuration-processor-3.0.7.jar" />
-        </processorPath>
-        <module name="user-service.main" />
-      </profile>
+      <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway-service.main" target="17" />
+      <module name="gateway-service.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

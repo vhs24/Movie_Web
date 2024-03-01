@@ -39,6 +39,19 @@ eureka:
 server:
   port: 8081
 
+front-end:
+  url:
+    login: "localhost:8080"
+
+app:
+  auth:
+    tokenSecret: sPZFREshRpAeQ9xBbHhjKhjYMJslx4VKK2QJ35uFQaOpHID3Dxkh8aiuzmaRidCYq4xSUA0x8ubgJ0gg5wH2hWdtuDCKxIYz4VRZha6x2DKjG1UABCD9ahOVGc7wBwYP
+    tokenExpirationMsec: 864000000
+  cors:
+    allowedOrigins: http://localhost:3000 # Comma separated list of allowed origins
+  cookie:
+    name: XSRF-TOKEN
+
 micro-service:
   config-service-uri: lb://config-service
   user-service-uri: lb://user-service

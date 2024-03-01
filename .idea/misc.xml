@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/be-movie/batch" />
     <file type="web" url="file://$PROJECT_DIR$/be-movie/config-service" />
     <file type="web" url="file://$PROJECT_DIR$/be-movie/discovery-service" />
+    <file type="web" url="file://$PROJECT_DIR$/be-movie/gateway-service" />
     <file type="web" url="file://$PROJECT_DIR$/be-movie/hall-service" />
     <file type="web" url="file://$PROJECT_DIR$/be-movie/movie-service" />
     <file type="web" url="file://$PROJECT_DIR$/be-movie/reserve-service" />

@@ -15,7 +15,7 @@ public class WebSecurityConfig {
 
 	@SuppressWarnings("deprecation")
 	@Bean
-	public AuthTokenFilter authenticationJwtTokenFilter() {
+	public AuthTokenFilter authTokenFilter() {
 		return new AuthTokenFilter();
 	}
 
@@ -30,18 +30,10 @@ public class WebSecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.addFilterBefore(
-				new HeaderUsernamePasswordAuthenticationFilter(),
-				UsernamePasswordAuthenticationFilter.class)
-				.authorizeRequests()
-				.requestMatchers("/index.html").permitAll()
-				.requestMatchers("/swagger-ui.html").hasRole("ADMIN")
-				.anyRequest()
-				.authenticated();
 		http.csrf().disable()
 				.authorizeHttpRequests().requestMatchers("/login", "/regist").permitAll();
 
-		http.addFilterBefore( authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+		http.addFilterBefore( authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
 		return http.build();
 	}
