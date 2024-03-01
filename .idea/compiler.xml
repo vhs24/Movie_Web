@@ -5,8 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="gateway-service.main" target="17" />
-      <module name="gateway-service.test" target="17" />
+      <module name="auth-service.main" target="17" />
+      <module name="auth-service.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

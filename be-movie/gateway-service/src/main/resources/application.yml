@@ -1,0 +1,16 @@
+server:
+  port: 8080
+          
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+
+jwt.secret: sPZFREshRpAeQ9xBbHhjKhjYMJslx4VKK2QJ35uFQaOpHID3Dxkh8aiuzmaRidCYq4xSUA0x8ubgJ0gg5wH2hWdtuDCKxIYz4VRZha6x2DKjG1UABCD9ahOVGc7wBwYP
+
+microservice:
+  user-service: http://localhost:8081
+  auth-service: http://localhost:8082
+  api-gateway: http://localhost:8080
