@@ -4,22 +4,13 @@
     <ul nz-menu nzMode="inline">
       <li nz-menu-item>
         <a routerLink="/">Home</a>
-<<<<<<< HEAD
       </li>
       <li nz-menu-item><a routerLink="/movie">Movie</a></li>
-=======
-        </li>
-      <li nz-menu-item><a routerLink="/ticket">Ticket</a></li>
->>>>>>> parent of 9cf0149 (adding FE)
       <li nz-menu-item>nav 3</li>
     </ul>
   </nz-sider>
   <nz-content>
-    <nz-breadcrumb>
-      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-      <nz-breadcrumb-item>List</nz-breadcrumb-item>
-      <nz-breadcrumb-item>App</nz-breadcrumb-item>
-    </nz-breadcrumb>
+    <app-breadcrumb></app-breadcrumb>
     <router-outlet></router-outlet>
   </nz-content>
 </nz-layout>
