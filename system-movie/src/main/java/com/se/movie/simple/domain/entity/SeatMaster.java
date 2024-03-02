@@ -22,16 +22,16 @@ public class SeatMaster {
     @UuidGenerator(style = Style.TIME)
     @Column(name = "id", updatable = false, nullable = false)
 	private String id;
-
+	
 	@Column(nullable = false)
 	private int seatRow;
-
+	
 	@Column(nullable = false)
 	private int seatColume;
-
+	
 	@Column(nullable = false)
 	private byte usableStatus;
-
+	
 	@Column(nullable = false)
 	private String siteInfoId;
 }

@@ -15,10 +15,20 @@ public class SecurityConfig {
 		return new AuthTokenFilter();
 	}
 
+    @Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-			.authorizeHttpRequests().requestMatchers("/login", "/regist").permitAll();
+		http.csrf(csrf -> csrf.disable())
+			.cors(cors -> cors.disable())
+				.authorizeHttpRequests(auth -> auth
+						.requestMatchers("/api/auth/**").permitAll()
+						.requestMatchers("/internal/**").permitAll()
+						.requestMatchers("/util/**").permitAll()
+						.anyRequest().authenticated());
 
 		http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 

@@ -1,5 +1,15 @@
-version: "3.3"
+version: "3"
 services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: moviedb
+    networks:
+      - movie
   redis:
     image: redis:7.2.4
     container_name: redis
@@ -16,7 +26,8 @@ services:
       - 8001:8001
     volumes:
       - redis_insight_volume_data:/db
-
-volumes:
+networks:
+  movie:
+    driver: bridge
   redis_volume_data:
   redis_insight_volume_data:

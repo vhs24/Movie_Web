@@ -20,42 +20,37 @@ import lombok.Setter;
 @Entity
 @Table(name="movie_info")
 public class MovieInfo {
-
+	
 	@Id
     @GeneratedValue
     @UuidGenerator(style = Style.TIME)
     @Column(name = "id", updatable = false, nullable = false)
 	private String id;
-
+	
 	@Column(nullable = false)
 	private String movieName;
-
+	
 	private String movieSubName;
-
-	private String starrings;
-
-	private String creators;
-
+	
 	@Column(nullable = false)
 	private long durationMin;
-
+	
 	private String description;
-	private String image;
-
+	
 	@Column(nullable = false)
 	private String thumnail;
 
 	@Column(nullable = false)
 	private String productionId;
-
+	
 	@Column(nullable = false)
 	private int yearReleaseAt;
-
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Column(columnDefinition = "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP")
-	private LocalDate registAt;
-
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDate registTime;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Column(columnDefinition = "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP")
-	private LocalDate updateAt;
+	private LocalDate updateTime;
 }

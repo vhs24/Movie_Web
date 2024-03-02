@@ -1,4 +1,4 @@
-package com.se.movie.simple.domain.payload.response;
+package com.movieplus.domain.payload.response;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,13 +10,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MovieResponse {
+public class RetrieveMovieResponse {
 	
 	private String id;
 	
 	private String movieName;
-
-	private String movieSubName;
 	
 	private String description;
 	
@@ -29,6 +27,8 @@ public class MovieResponse {
 	private String thumnail;
 	
 	private List<Genre> genres;
+
+	private double rating;
 	
 	private Production production;
 	

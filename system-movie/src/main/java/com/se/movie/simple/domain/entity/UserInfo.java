@@ -28,26 +28,26 @@ public class UserInfo {
 	private String id;
 	@Column(nullable = false)
 	private String username;
-
+	
 	private String fName;
-
+	
 	private String lName;
-
+	
 	@Column(nullable = false)
 	private String email;
 	@Column(nullable = false)
 	private String password;
-
+	
 	private String imageUrl;
+	
+	@Column(nullable = false)
+	private Byte emailValidFlag;
 
 	@Column(nullable = false)
-	private Byte isEmailVerify;
-
-	@Column(nullable = false)
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate registTime;
-
+	
 	@Column(nullable = false)
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate updateTime;
 }

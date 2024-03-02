@@ -1,9 +1,9 @@
-package com.se.movie.simple.domain.service;
+package com.movieplus.domain.service;
 
-import com.se.movie.simple.controller.LoginController.LoginRequest;
+import com.movieplus.domain.payload.request.LoginRequest;
 
 public interface LoginService {
 
-	String doLogin(LoginRequest loginRequest);
+	Object doLogin(LoginRequest loginRequest) throws Exception;
 
 }

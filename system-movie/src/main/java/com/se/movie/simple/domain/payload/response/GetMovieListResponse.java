@@ -1,4 +1,4 @@
-package com.se.movie.simple.domain.payload.response;
+package com.movieplus.domain.payload.response;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ListMovieResponse {
+public class GetMovieListResponse {
 
 	private List<Movie> movies;
 	
@@ -21,10 +21,10 @@ public class ListMovieResponse {
 		
 		private String movieName;
 		
+		private String movieSubName;
+		
 		private String image;
 	
-		private double rating;
-		
 		@JsonFormat(pattern = "yyyy-MM-dd")
 		private LocalDate realestAt;
 	}

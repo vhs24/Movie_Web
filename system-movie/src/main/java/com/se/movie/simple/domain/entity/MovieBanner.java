@@ -17,16 +17,15 @@ import lombok.Setter;
 @Table(name="movie_banner")
 public class MovieBanner {
 
-
 	@Id
     @GeneratedValue
     @UuidGenerator(style = Style.TIME)
     @Column(name = "id", updatable = false, nullable = false)
 	private String id;
-
+	
 	@Column(nullable = false)
 	private String movieId;
-
+	
 	@Column(nullable = false)
 	private String bannerSrc;
 }

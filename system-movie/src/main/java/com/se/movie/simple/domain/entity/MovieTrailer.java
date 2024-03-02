@@ -22,12 +22,12 @@ public class MovieTrailer {
     @UuidGenerator(style = Style.TIME)
     @Column(name = "id", updatable = false, nullable = false)
 	private String id;
-
+	
 	@Column(nullable = false)
 	private String movieId;
-
+	
 	@Column(nullable = false)
 	private String trailerUrl;
-
+	
 	private String trailerTitle;
 }

@@ -22,6 +22,6 @@ public class ProductionInfo {
     @UuidGenerator(style = Style.TIME)
     @Column(name = "id", updatable = false, nullable = false)
 	private String id;
-
+	
 	private String productionName;
 }
