@@ -1,7 +1,11 @@
 package com.se.movie.simple.domain.entity;
 
+import java.time.LocalDate;
+
 import org.hibernate.annotations.UuidGenerator;
 import org.hibernate.annotations.UuidGenerator.Style;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,18 +18,36 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="movie_genre")
-public class MovieGenre {
+@Table(name ="user_info")
+public class UserInfo {
 
 	@Id
     @GeneratedValue
     @UuidGenerator(style = Style.TIME)
     @Column(name = "id", updatable = false, nullable = false)
 	private String id;
+	@Column(nullable = false)
+	private String username;
+
+	private String fName;
+
+	private String lName;
 
 	@Column(nullable = false)
-	private String movieId;
+	private String email;
+	@Column(nullable = false)
+	private String password;
+
+	private String imageUrl;
 
 	@Column(nullable = false)
-	private String genreId;
+	private Byte isEmailVerify;
+
+	@Column(nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDate registTime;
+
+	@Column(nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDate updateTime;
 }

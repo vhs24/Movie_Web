@@ -15,6 +15,8 @@ public class MovieResponse {
 	private String id;
 	
 	private String movieName;
+
+	private String movieSubName;
 	
 	private String description;
 	
@@ -27,8 +29,6 @@ public class MovieResponse {
 	private String thumnail;
 	
 	private List<Genre> genres;
-
-	private double rating;
 	
 	private Production production;
 	

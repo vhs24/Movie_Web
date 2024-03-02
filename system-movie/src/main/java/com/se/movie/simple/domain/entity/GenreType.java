@@ -14,8 +14,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="movie_genre")
-public class MovieGenre {
+@Table(name="genre_type")
+public class GenreType {
 
 	@Id
     @GeneratedValue
@@ -24,8 +24,10 @@ public class MovieGenre {
 	private String id;
 
 	@Column(nullable = false)
-	private String movieId;
+	private String genreKbn;
 
 	@Column(nullable = false)
-	private String genreId;
+	private String displayName;
+
+	private String orderScore;
 }

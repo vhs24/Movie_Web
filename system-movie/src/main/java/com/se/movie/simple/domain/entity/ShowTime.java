@@ -1,7 +1,11 @@
 package com.se.movie.simple.domain.entity;
 
+import java.time.LocalDateTime;
+
 import org.hibernate.annotations.UuidGenerator;
 import org.hibernate.annotations.UuidGenerator.Style;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,8 +18,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="movie_genre")
-public class MovieGenre {
+@Table(name="cinema_type")
+public class ShowTime {
 
 	@Id
     @GeneratedValue
@@ -27,5 +31,13 @@ public class MovieGenre {
 	private String movieId;
 
 	@Column(nullable = false)
-	private String genreId;
+	private Integer siteId;
+
+	@Column(nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime startTime;
+
+	@Column(nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime endTime;
 }
